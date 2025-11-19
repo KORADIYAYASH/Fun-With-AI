@@ -2,7 +2,7 @@ import { GoogleGenAI, Modality } from "@google/genai";
 import { ToolId } from "../types";
 
 // Standard client using env key
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 
 export const generateTextContent = async (
   prompt: string,
@@ -160,13 +160,13 @@ export const generateSpeech = async (text: string) => {
 export const generateVeoVideo = async (prompt: string) => {
     // We need a fresh client because Veo might require key selection
     // Use the window.aistudio check in component, here we assume we can call it.
-    // Note: We are NOT passing apiKey here because window.aistudio handles it for Veo 
+    // Note: We are NOT passing apiKey here because window.aistudio handles it for Veo
     // if we are in that specific context, but strictly following prompt guidelines:
     // "Create a new GoogleGenAI instance right before making an API call to ensure it always uses the most up-to-date API key"
-    // However, Veo specifically uses `window.aistudio` selected key context often. 
+    // However, Veo specifically uses `window.aistudio` selected key context often.
     // Standard logic:
-    
-    const veoAi = new GoogleGenAI({ apiKey: process.env.API_KEY }); 
+
+    const veoAi = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY }); 
     
     let operation = await veoAi.models.generateVideos({
         model: 'veo-3.1-fast-generate-preview',
@@ -182,12 +182,12 @@ export const generateVeoVideo = async (prompt: string) => {
 }
 
 export const checkVeoOperation = async (operation: any) => {
-     const veoAi = new GoogleGenAI({ apiKey: process.env.API_KEY });
+     const veoAi = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
      return await veoAi.operations.getVideosOperation({ operation: operation });
 }
 
 export const getLiveSession = async (callbacks: any) => {
-    const liveAi = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const liveAi = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
     return liveAi.live.connect({
         model: 'gemini-2.5-flash-native-audio-preview-09-2025',
         callbacks,
