@@ -1,0 +1,9 @@
+{
+  "name": "Gemini Omni-Tool Suite",
+  "description": "A comprehensive educational dashboard demonstrating the capabilities of Google Gemini models, including Text, Vision, Audio, Video (Veo), and Live API interactions.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}

@@ -1,0 +1,76 @@
+import { ToolConfig, ToolId, ToolCategory } from "./types";
+
+export const TOOLS: ToolConfig[] = [
+  {
+    id: ToolId.CHAT_BASIC,
+    name: "Basic Chat",
+    description: "General purpose conversational AI assistant.",
+    category: ToolCategory.TEXT,
+    icon: "💬",
+    model: "gemini-2.5-flash",
+  },
+  {
+    id: ToolId.CHAT_CODE,
+    name: "Code Expert",
+    description: "Specialized for generating and debugging code.",
+    category: ToolCategory.TEXT,
+    icon: "💻",
+    model: "gemini-3-pro-preview",
+  },
+  {
+    id: ToolId.IMAGE_GEN,
+    name: "Image Generator",
+    description: "Create visuals from text descriptions.",
+    category: ToolCategory.VISUAL,
+    icon: "🎨",
+    model: "imagen-4.0-generate-001",
+  },
+  {
+    id: ToolId.IMAGE_EDIT,
+    name: "Image Editor",
+    description: "Edit existing images with natural language.",
+    category: ToolCategory.VISUAL,
+    icon: "✏️",
+    model: "gemini-2.5-flash-image",
+  },
+  {
+    id: ToolId.TTS,
+    name: "Text to Speech",
+    description: "Turn text into lifelike audio.",
+    category: ToolCategory.MULTIMEDIA,
+    icon: "🗣️",
+    model: "gemini-2.5-flash-preview-tts",
+  },
+  {
+    id: ToolId.VIDEO_VEO,
+    name: "Video (Veo)",
+    description: "Generate high-definition videos.",
+    category: ToolCategory.MULTIMEDIA,
+    icon: "🎬",
+    model: "veo-3.1-fast-generate-preview",
+  },
+  {
+    id: ToolId.LIVE_AUDIO,
+    name: "Live Conversation",
+    description: "Real-time audio/video interaction.",
+    category: ToolCategory.REALTIME,
+    icon: "📡",
+    model: "gemini-2.5-flash-native-audio-preview-09-2025",
+  },
+  {
+    id: ToolId.SEARCH_GROUNDING,
+    name: "Search Grounding",
+    description: "Chat with access to real-time Google Search data.",
+    category: ToolCategory.KNOWLEDGE,
+    icon: "🔍",
+    model: "gemini-2.5-flash",
+  },
+  {
+    id: ToolId.MAPS_GROUNDING,
+    name: "Maps Grounding",
+    description: "Find places and locations with Google Maps.",
+    category: ToolCategory.KNOWLEDGE,
+    icon: "🗺️",
+    model: "gemini-2.5-flash",
+  }
+];
